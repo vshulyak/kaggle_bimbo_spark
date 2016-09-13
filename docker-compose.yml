@@ -1,5 +1,5 @@
 master:
-  image: vshulyak/overfittr
+  image: vshulyak/overfittr:1.0-1-g0a6f319
   command: /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
   hostname: master
   environment:
@@ -24,7 +24,7 @@ master:
     - ./docker/conf/master:/conf
 
 worker:
-  image: vshulyak/overfittr
+  image: vshulyak/overfittr:1.0-1-g0a6f319
   command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
   hostname: worker
   environment:
